@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coral_sense</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+   <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span class = "logo">tbd</span>
+            <span class = "name">CoralSense</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class = "nav-link active">Predictive Model</a></li>
+            <li><a href="info.html" class="nav-link">Coding Process</a></li>
+            <li ><a href="ungoal.html" class="nav-link">UN Sustainability Goal</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-cnt">
+            <h1>How bleached is your reef?</h1>
+            <p>Adjust the features below....more text</p>
+            <a href="#predictor" class = "herocta">Begin Prediction</a>
+
+        </div>
+        <div class ="coolring" id="hring">
+            <div class="coolring-inner">
+                <span class="coral-pct" id="hpct">-</span>
+                <span class = "coral-label">%bleached</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="predictor" id="predictor">
+        <div class ="predictor-inner">
+            <div class = "predictor-header">
+                <h2>Environmental Parameters</h2>
+                <p>Drag sliders to adjust reef conditions</p>
+            </div>
+
+            <div class = "slider-grid">
+                <div class= "group-name">
+                    <h3 class = "slider-name">Thermal Stress</h3>
+                    <div class="slider-card">
+                        <div class="slider-top">
+                            <label>TSA_DHW<span class = "ft-explanation">Thermal Stress Anomaly Degree Heating Weeks</span></label>
+                            <span class = "slider-val" id="val-TSA_DHW">5.0</span>
+                        </div>
+                        <input type="range" min="0" max="30" step="0.1" value="5" id ="TSA_DHW" class="slider"/>
+                        <div class = "slider-range"><span>0</span><span>30</span></div>
+                    </div>
+                    <div class="slider-card">
+                        <div class="slider-top">
+                            <label>TSA_DHWMAX<span class = "ft-explanation">Max DHW in region</span></label>
+                            <span class = "slider-val" id="val-TSA_DHWMax">8.0</span>
+                        </div>
+                        <input type="range" min="0" max="50" step="0.1" value="8" id ="TSA_DHWMax" class="slider"/>
+                        <div class = "slider-range" ><span>0</span><span>50</span></div>
+                    </div>
+                    <div class="slider-card">
+                        <div class="slider-top">
+                            <label>TSA_DHWMean<span class = "ft-explanation">Mean DHW in region</span></label>
+                            <span class = "slider-val" id="val-TSA_DHWMean">4.0</span>
+                        </div>
+                        <input type="range" min="0" max="30" step="0.1" value="4" id ="TSA_DHWMean" class="slider"/>
+                        <div class = "slider-range"><span>0</span><span>30</span></div>
+                    </div>
+                <div class="slider-card">
+                    <div class="slider-top">
+                        <label>TSA_Frequency <span class="feature-hint">Frequency of thermal anomaly events</span></label>
+                        <span class="slider-val" id="val-TSA_Frequency">0.30</span>
+                    </div>
+                    <input type="range" min="0" max="1" step="0.01" value="0.3" id="TSA_Frequency" class="slider" />
+                    <div class="slider-range"><span>0</span><span>1</span></div>
+                 </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                        <label>TSA_FrequencyMax <span class="feature-hint">Max frequency of thermal anomalies</span></label>
+                        <span class="slider-val" id="val-TSA_FrequencyMax">0.50</span>
+                    </div>
+                    <input type="range" min="0" max="1" step="0.01" value="0.5" id="TSA_FrequencyMax" class="slider" />
+                    <div class="slider-range"><span>0</span><span>1</span></div>
+                </div>
+
+                    <div class="slider-card">
+                        <div class="slider-top">
+                        <label>TSA_Maximum <span class="feature-hint">Peak thermal stress anomaly value</span></label>
+                        <span class="slider-val" id="val-TSA_Maximum">2.0</span>
+                        </div>
+                        <input type="range" min="0" max="10" step="0.1" value="2" id="TSA_Maximum" class="slider" />
+                        <div class="slider-range"><span>0</span><span>10</span></div>
+                    </div>
+                </div>
+            <div class="slider-group">
+                <h3 class="group-name">Sea Surface Anomaly</h3>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>SSTA <span class="ft-explanation">Sea Surface Temp Anomaly (°C)</span></label>
+                    <span class="slider-val" id="val-SSTA">0.5</span>
+                    </div>
+                    <input type="range" min="-3" max="5" step="0.1" value="0.5" id="SSTA" class="slider" />
+                    <div class="slider-range"><span>-3°C</span><span>+5°C</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>SSTA_DHW <span class="ft-explanation">SSTA Degree Heating Weeks</span></label>
+                    <span class="slider-val" id="val-SSTA_DHW">3.0</span>
+                    </div>
+                    <input type="range" min="0" max="30" step="0.1" value="3" id="SSTA_DHW" class="slider" />
+                    <div class="slider-range"><span>0</span><span>30</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>SSTA_DHWMax <span class="ft-explanation">Max SSTA DHW in region</span></label>
+                    <span class="slider-val" id="val-SSTA_DHWMax">6.0</span>
+                    </div>
+                    <input type="range" min="0" max="40" step="0.1" value="6" id="SSTA_DHWMax" class="slider" />
+                    <div class="slider-range"><span>0</span><span>40</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>SSTA_DHWMean <span class="ft-explanation">Mean SSTA DHW in region</span></label>
+                    <span class="slider-val" id="val-SSTA_DHWMean">2.5</span>
+                    </div>
+                    <input type="range" min="0" max="30" step="0.1" value="2.5" id="SSTA_DHWMean" class="slider" />
+                    <div class="slider-range"><span>0</span><span>30</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>SSTA_Frequency <span class="ft-explanation">Frequency of SSTA events</span></label>
+                    <span class="slider-val" id="val-SSTA_Frequency">0.40</span>
+                    </div>
+                    <input type="range" min="0" max="1" step="0.01" value="0.4" id="SSTA_Frequency" class="slider" />
+                    <div class="slider-range"><span>0</span><span>1</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>SSTA_FrequencyMax <span class="ft-explanation">Max frequency of SSTA events</span></label>
+                    <span class="slider-val" id="val-SSTA_FrequencyMax">0.60</span>
+                    </div>
+                    <input type="range" min="0" max="1" step="0.01" value="0.6" id="SSTA_FrequencyMax" class="slider" />
+                    <div class="slider-range"><span>0</span><span>1</span></div>
+                </div>
+                </div>
+
+            <div class="slider-group">
+                <h3 class="group-name">Environment</h3>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>ClimSST <span class="ft-explanation">Climatological SST baseline (°C)</span></label>
+                    <span class="slider-val" id="val-ClimSST">27.0</span>
+                    </div>
+                    <input type="range" min="20" max="35" step="0.1" value="27" id="ClimSST" class="slider" />
+                    <div class="slider-range"><span>20°C</span><span>35°C</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>Temperature_Mean <span class="ft-explanation">Mean local temperature (°C)</span></label>
+                    <span class="slider-val" id="val-Temperature_Mean">26.0</span>
+                    </div>
+                    <input type="range" min="18" max="35" step="0.1" value="26" id="Temperature_Mean" class="slider" />
+                    <div class="slider-range"><span>18°C</span><span>35°C</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>Turbidity <span class="ft-explanation">Water clarity (0 = crystal clear)</span></label>
+                    <span class="slider-val" id="val-Turbidity">0.2</span>
+                    </div>
+                    <input type="range" min="0" max="5" step="0.1" value="0.2" id="Turbidity" class="slider" />
+                    <div class="slider-range"><span>0</span><span>5</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>Depth_m <span class="ft-explanation">Reef depth in metres</span></label>
+                    <span class="slider-val" id="val-Depth_m">5.0</span>
+                    </div>
+                    <input type="range" min="0" max="40" step="0.5" value="5" id="Depth_m" class="slider" />
+                    <div class="slider-range"><span>0m</span><span>40m</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>Distance_to_Shore <span class="ft-explanation">Distance from coastline (km)</span></label>
+                    <span class="slider-val" id="val-Distance_to_Shore">10.0</span>
+                    </div>
+                    <input type="range" min="0" max="200" step="1" value="10" id="Distance_to_Shore" class="slider" />
+                    <div class="slider-range"><span>0km</span><span>200km</span></div>
+                </div>
+
+                <div class="slider-card">
+                    <div class="slider-top">
+                    <label>Cyclone_Frequency <span class="ft-explanation">Cyclone events per decade</span></label>
+                    <span class="slider-val" id="val-Cyclone_Frequency">1.0</span>
+                    </div>
+                    <input type="range" min="0" max="10" step="0.1" value="1" id="Cyclone_Frequency" class="slider" />
+                    <div class="slider-range"><span>0</span><span>10</span></div>
+                </div>
+            </div>
+        <div class="slider-group">
+          <h3 class="group-name">Location</h3>
+
+          <div class="slider-card">
+            <div class="slider-top">
+              <label>Exposure <span class="ft-explanation">Wave exposure (0=sheltered, 1=exposed)</span></label>
+              <span class="slider-val" id="val-Exposure">0.50</span>
+            </div>
+            <input type="range" min="0" max="1" step="0.01" value="0.5" id="Exposure" class="slider" />
+            <div class="slider-range"><span>Sheltered</span><span>Exposed</span></div>
+          </div>
+
+          <div class="slider-card">
+            <div class="slider-top">
+              <label>Ocean_Name <span class="ft-explanation">Ocean basin (encoded 0–4)</span></label>
+              <span class="slider-val" id="val-Ocean_Name">2</span>
+            </div>
+            <input type="range" min="0" max="4" step="1" value="2" id="Ocean_Name" class="slider" />
+            <div class="slider-range"><span>Atlantic</span><span>Arabian</span></div>
+            <div class="ocean-labels">
+              <span>Atlantic</span><span>Indian</span><span>Pacific</span><span>Red Sea</span><span>Arabian</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        </div>
+
+        <div class="predict-section">
+            <button class="predict-btn" id="predictBtn">
+            <span class="btn-text">Predict Bleaching %</span>
+            </button>
+            <div class="loading" id="loading">
+            <div class="loading-dots"><span></span><span></span><span></span></div>
+            <p>Running model inference...</p>
+            </div>
+        </div>
+
+        <div class="result-panel" id="resultPanel">
+            <div class="result-ring-wrap">
+            <svg class="result-ring" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <linearGradient id="gGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#00e5c3"/>
+                    <stop offset="45%" style="stop-color:#fbbf24"/>
+                    <stop offset="100%" style="stop-color:#ef4444"/>
+                </linearGradient>
+                </defs>
+                <path d="M 20 120 A 90 90 0 0 1 200 120" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="18" stroke-linecap="round"/>
+                <path id="ringArc" d="M 20 120 A 90 90 0 0 1 200 120" fill="none" stroke="url(#gGrad)" stroke-width="18" stroke-linecap="round" stroke-dasharray="0 283" style="transition: stroke-dasharray 1.2s cubic-bezier(.4,0,.2,1)"/>
+                <text x="110" y="105" text-anchor="middle" id="ringPct" fill="white" font-family="'Cormorant Garamond'" font-size="32" font-weight="600">—</text>
+                <text x="110" y="122" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'DM Mono'" font-size="9">% BLEACHED</text>
+            </svg>
+            </div>
+            <div class="result-info">
+            <div class="result-level" id="resultLevel">—</div>
+            <p class="result-desc" id="resultDesc">Run the prediction to see results.</p>
+            <div class="top-features" id="topFeatures"></div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section class="model-stats">
+        <div class="stats-inner">
+        <h2>Model Performance</h2>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value">Random Forest</div><div class="stat-label">Algorithm</div></div>
+            <div class="stat-card"><div class="stat-value">0.576</div><div class="stat-label">R² Score</div></div>
+            <div class="stat-card"><div class="stat-value">136.7</div><div class="stat-label">MSE</div></div>
+            <div class="stat-card"><div class="stat-value">11.69</div><div class="stat-label">RMSE</div></div>
+            <div class="stat-card"><div class="stat-value">100</div><div class="stat-label">Estimators</div></div>
+            <div class="stat-card"><div class="stat-value">do</div><div class="stat-label">Data Source</div></div>
+        </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <p>CoralSense more text...</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

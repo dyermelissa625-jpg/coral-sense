@@ -1,0 +1,109 @@
+:root {
+  --black:        #0a1628;
+  --deep:       #071122;
+  --surface:    rgba(255,255,255,0.04);
+  --surface-hi: rgba(255,255,255,0.09);
+  --border:     rgba(255,255,255,0.10);
+  --blue:       #1ab3eb;
+  --gold:       #fbbf24;
+  --coral:      #ef4444;
+  --text:       rgba(255,255,255,0.88);
+  --muted:      rgba(255,255,255,0.45);
+  --font:  'DM Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: rgba(7,17,34,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo { 
+    font-size: 1.6rem; 
+}
+.name{ 
+    font-family: var(--font-serif); 
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  transition: all 0.25s;
+  color:aliceblue;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: var(--teal);
+  border-color: rgba(0,229,195,0.25);
+  background: rgba(0,229,195,0.06);
+}
+
+@media (max-width: 900px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .hero {
+    flex-direction: column;
+    padding: 7rem 1.5rem 3rem;
+    text-align: center;
+    gap: 3rem;
+  }
+  .hero-content { max-width: 100%; }
+  .hero-subtitle { margin: 0 auto 2.5rem; }
+  .predictor { padding: 3rem 1.5rem; }
+  .result-panel { grid-template-columns: 1fr; }
+  .model-stats { padding: 3rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .sliders-grid { grid-template-columns: 1fr; }
+}
