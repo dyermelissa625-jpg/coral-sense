@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoralSense - Info</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4" />
+  </video>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="name">CoralSense</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Predictive Model</a></li>
+      <li><a href="info.html" class="nav-link">Coding Process</a></li>
+      <li><a href="ungoal.html" class="nav-link active">UN Sustainability Goal</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-cnt">
+      <h1>Why reefs matter</h1>
+      <p>Coral bleaching is one of the most visible signs of climate change in the ocean. This page explains what it is, where it is happening, and how a predictive model can support conservation efforts.</p>
+    </div>
+  </section>
+
+  <section class="predictor">
+    <div class="predictor-inner">
+
+      <div class="predictor-header">
+        <h2>What is coral bleaching</h2>
+        <p>Corals live in a close relationship with photosynthetic algae called zooxanthellae. The algae live inside coral tissue and provide up to 90% of the coral's energy. They also give coral its colour.</p>
+        <p>When seawater temperature rises even one or two degrees above the seasonal maximum for several weeks, corals expel their algae. Without them, the coral turns white. This is bleaching. The coral is not dead yet, but it is starving. If temperatures return to normal quickly, corals can recover. If the stress continues, they die.</p>
+      </div>
+
+      <div class="stats-grid" style="margin-bottom: 4rem;">
+        <div class="stat-card">
+          <div class="stat-value">50%</div>
+          <div class="stat-label">of shallow-water corals lost since the 1950s</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1°C</div>
+          <div class="stat-label">above seasonal maximum can trigger bleaching</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">500M</div>
+          <div class="stat-label">people depend on reefs for food or income</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">25%</div>
+          <div class="stat-label">of all marine species supported by reefs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">53</div>
+          <div class="stat-label">countries affected by the 2023/24 bleaching event</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">99%</div>
+          <div class="stat-label">of reefs at risk annually at 2°C of warming</div>
+        </div>
+      </div>
+
+      <div class="predictor-header">
+        <h2>Where it is happening</h2>
+        <p>Bleaching events were once rare and localised. Since the 1980s they have become more frequent, more severe, and more widespread. The Great Barrier Reef has experienced mass bleaching in 1998, 2002, 2016, 2017, 2020, 2022, and 2024. The Caribbean, the Red Sea, the Coral Triangle in Southeast Asia, and the Hawaiian archipelago have all seen significant events in recent years.</p>
+        <p>The 2023 to 2024 global bleaching event was the fourth on record and the most extensive. Water temperatures in the Florida Keys reached levels that had never been recorded before. Climate projections suggest that at 1.5 degrees of global warming, between 70% and 90% of reefs will experience bleaching-level heat stress annually.</p>
+      </div>
+
+      <div class="predictor-header">
+        <h2>UN Sustainability Goal 14</h2>
+        <p>SDG 14 calls for the conservation and sustainable use of the oceans, seas, and marine resources. Target 14.2 specifically addresses the protection of marine and coastal ecosystems, including action to restore reef health and strengthen resilience against stress.</p>
+        <p>Progress has been slow. Ocean acidification is accelerating, marine protected areas remain underfunded, and the data needed to monitor reef health globally is still incomplete in many regions. One of the most useful things any organisation can do right now is improve the quality and speed of reef monitoring. Predictive tools are a direct contribution to that goal.</p>
+      </div>
+
+      <div class="predictor-header">
+        <h2>How this model helps</h2>
+        <p>CoralSense uses a Random Forest model trained on NOAA CoralTemp satellite data. It takes twenty environmental variables and estimates the percentage of coral bleaching at a given site. The model does not replace field surveys, but it helps prioritise where and when to send teams.</p>
+        <p>Early warning gives reef managers time to reduce local stressors while conditions are still recoverable. Resource allocation becomes more targeted when high-risk sites can be identified in advance. The model's feature importances also reveal which environmental variables matter most at different sites, which feeds into decisions about what local interventions are worth pursuing.</p>
+        <p>The model has an R² of 0.576, meaning it explains roughly 58% of the variation in bleaching outcomes in the test data. It should be used as one input among several, not as a definitive forecast.</p>
+      </div>
+
+      <div style="text-align: center; padding: 2rem 0 1rem;">
+        <a href="index.html" class="herocta">Try the predictor</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>CoralSense · Built with NOAA CoralTemp data · Machine Learning for Ocean Conservation</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      navbar.style.background = window.scrollY > 40
+        ? "rgba(7,17,34,0.95)"
+        : "rgba(7,17,34,0.70)";
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
