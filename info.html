@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoralSense — Coding Process</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="name">CoralSense</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class = "nav-link">Predictive Model</a></li>
+      <li><a href="info.html" class="nav-link active">Coding Process</a></li>
+      <li ><a href="ungoal.html" class="nav-link">UN Sustainability Goal</a></li>
+
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-cnt">
+      <h1>How we built this</h1>
+      <p>A full-stack machine learning web app built with Python, Flask, and vanilla JS. Below is the technical process from model integration to frontend deployment.</p>
+    </div>
+  </section>
+
+  <section class="predictor">
+    <div class="predictor-inner">
+
+      <div class="predictor-header">
+        <h2>1. Project setup</h2>
+        <p>Text to come</p>
+      </div>
+
+
+
+  <footer class="footer">
+    <p>CoralSense · Built with NOAA CoralTemp data · Machine Learning for Ocean Conservation</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      navbar.style.background = window.scrollY > 40
+        ? "rgba(7,17,34,0.95)"
+        : "rgba(7,17,34,0.70)";
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
